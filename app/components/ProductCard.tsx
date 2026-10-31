@@ -4,9 +4,11 @@ import { ProductArt } from "./ProductArt";
 import styles from "./ProductCard.module.css";
 
 export function ProductCard({ product }: { product: Product }) {
+  const onSale = product.compareAtPrice !== undefined && product.compareAtPrice > product.price;
   return (
     <article className={styles.card} data-testid="product-card" data-product={product.id}>
       <div className={styles.art}>
+        {onSale && <span className={styles.badge}>Sale</span>}
         <ProductArt id={product.id} backdrop={product.backdrop} label={product.name} />
       </div>
       <div className={styles.body}>
