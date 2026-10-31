@@ -4,9 +4,12 @@ import { ProductArt } from "./ProductArt";
 import styles from "./ProductCard.module.css";
 
 export function ProductCard({ product }: { product: Product }) {
+  const compareAt = product.compareAtPrice;
+  const onSale = compareAt !== undefined && compareAt > product.price;
   return (
     <article className={styles.card} data-testid="product-card" data-product={product.id}>
       <div className={styles.art}>
+        {onSale && <span className={styles.badge}>Sale</span>}
         <ProductArt id={product.id} backdrop={product.backdrop} label={product.name} />
       </div>
       <div className={styles.body}>
@@ -14,7 +17,10 @@ export function ProductCard({ product }: { product: Product }) {
         <h3 className={styles.name}>{product.name}</h3>
         <p className={styles.blurb}>{product.blurb}</p>
         <div className={styles.footer}>
-          <span className={styles.price}>{formatPrice(product.price)}</span>
+          <span className={styles.prices}>
+            <span className={styles.price}>{formatPrice(product.price)}</span>
+            {onSale && <s className={styles.was}>{formatPrice(compareAt)}</s>}
+          </span>
           <AddToCart name={product.name} />
         </div>
       </div>
