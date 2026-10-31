@@ -49,14 +49,14 @@ function Mug() {
 function Tray({ pear = true }: { pear?: boolean }) {
   return (
     <g>
-      <Shadow rx={150} />
-      <path d="M58 176 h284 l-16 70 c-2 10 -10 16 -20 16 h-212 c-10 0 -18 -6 -20 -16 z" fill="#b8875a" />
-      <path d="M58 176 h284 l-6 22 h-272 z" fill="#c9996b" />
-      <rect x="40" y="160" width="320" height="22" rx="11" fill="#d6a978" />
-      <rect x="64" y="166" width="34" height="9" rx="4.5" fill="#8f6440" />
-      <rect x="302" y="166" width="34" height="9" rx="4.5" fill="#8f6440" />
-      {[0, 1, 2, 3].map((i) => (
-        <path key={i} d={`M${96 + i * 64} 206 q20 22 0 46`} fill="none" stroke="#a87a50" strokeWidth="2.5" opacity="0.6" />
+      <Shadow cy={214} rx={160} />
+      <path d="M50 176 h300 l-10 26 c-2 6 -8 10 -15 10 h-250 c-7 0 -13 -4 -15 -10 z" fill="#b8875a" />
+      <path d="M50 176 h300 l-3 9 h-294 z" fill="#c9996b" />
+      <rect x="40" y="162" width="320" height="18" rx="9" fill="#d6a978" />
+      <rect x="62" y="167" width="34" height="8" rx="4" fill="#8f6440" />
+      <rect x="304" y="167" width="34" height="8" rx="4" fill="#8f6440" />
+      {[0, 1, 2, 3, 4].map((i) => (
+        <path key={i} d={`M${86 + i * 56} 190 q10 7 0 16`} fill="none" stroke="#a87a50" strokeWidth="2" opacity="0.55" />
       ))}
       {pear && (
         <g>
@@ -156,17 +156,17 @@ export function HeroArt() {
         </radialGradient>
       </defs>
       <rect width="560" height="520" rx="28" fill="url(#glow)" />
-      <circle cx="430" cy="96" r="58" fill="#f3d9a6" opacity="0.6" />
-      <g transform="translate(-4 120) scale(1.42)">
+      <circle cx="430" cy="120" r="62" fill="#f3d9a6" opacity="0.6" />
+      <g transform="translate(-4 168) scale(1.42)">
         <Tray pear={false} />
       </g>
-      <g transform="translate(200 166) scale(0.72)">
+      <g transform="translate(200 214) scale(0.72)">
         <Carafe />
       </g>
-      <g transform="translate(30 166) scale(0.72)">
+      <g transform="translate(30 214) scale(0.72)">
         <Mug />
       </g>
-      <g transform="translate(330 191) scale(0.62)">
+      <g transform="translate(330 239) scale(0.62)">
         <Candlestick />
       </g>
     </svg>
