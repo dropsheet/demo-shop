@@ -14,7 +14,21 @@
 }
 
 .art {
+  position: relative;
   aspect-ratio: 4 / 3;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--surface);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .body {
@@ -44,6 +58,27 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 12px;
+}
+
+.prices {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.original {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .price {
