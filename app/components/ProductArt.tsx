@@ -130,7 +130,7 @@ function Carafe() {
 const ART: Record<string, () => React.ReactElement> = {
   "linen-throw": LinenThrow,
   "ceramic-mug": Mug,
-  "oak-tray": Tray,
+  "oak-tray": () => <Tray />,
   "wool-blanket": Blanket,
   "brass-candle": Candlestick,
   "glass-carafe": Carafe,
