@@ -1,59 +1,66 @@
 export type Product = {
   id: string;
   name: string;
+  maker: string;
   blurb: string;
   /** Price in US cents. */
   price: number;
   /** Price before a discount, in US cents. Set only on discounted products. */
   compareAtPrice?: number;
-  /** Two colours for the product's swatch artwork. */
-  swatch: [string, string];
+  /** Background colour behind the product artwork. */
+  backdrop: string;
 };
 
 export const products: Product[] = [
   {
     id: "linen-throw",
-    name: "Linen Throw",
-    blurb: "Stonewashed European linen, softer every wash.",
+    name: "Stonewashed Linen Throw",
+    maker: "Atelier Lune, Lithuania",
+    blurb: "Heavyweight European flax, washed until it drapes like an old shirt.",
     price: 8900,
-    swatch: ["#d9c8b4", "#a8927a"],
+    backdrop: "#e9dfd2",
   },
   {
     id: "ceramic-mug",
-    name: "Speckled Mug",
-    blurb: "Hand-thrown stoneware, holds 12 oz.",
+    name: "Speckled Stoneware Mug",
+    maker: "Hollow Clay Studio, Oregon",
+    blurb: "Hand-thrown and glazed in oatmeal speckle. Holds a generous 12 oz.",
     price: 2400,
     compareAtPrice: 3200,
-    swatch: ["#e8e4dc", "#8c8f8a"],
+    backdrop: "#dfe3dc",
   },
   {
     id: "oak-tray",
-    name: "Oak Serving Tray",
-    blurb: "Solid white oak with a hand-rubbed oil finish.",
+    name: "White Oak Serving Tray",
+    maker: "Northfold Woodshop, Vermont",
+    blurb: "Solid quartersawn oak with carved handles and a hand-rubbed oil finish.",
     price: 6400,
-    swatch: ["#c99b6a", "#7a5532"],
+    backdrop: "#efe4d3",
   },
   {
     id: "wool-blanket",
-    name: "Merino Blanket",
-    blurb: "Woven in Portugal from fine merino wool.",
+    name: "Merino Herringbone Blanket",
+    maker: "Serra Mill, Portugal",
+    blurb: "Fine merino woven in a soft herringbone on a 1920s loom.",
     price: 14800,
     compareAtPrice: 18500,
-    swatch: ["#7d8f7a", "#3f5040"],
+    backdrop: "#d7ddd3",
   },
   {
     id: "brass-candle",
-    name: "Brass Candlestick",
-    blurb: "Solid cast brass that patinas with age.",
+    name: "Cast Brass Candlestick",
+    maker: "Foundry Row, Sheffield",
+    blurb: "Sand-cast solid brass that warms to a soft patina over the years.",
     price: 3800,
-    swatch: ["#e0c47a", "#9c7a2e"],
+    backdrop: "#ece3cf",
   },
   {
     id: "glass-carafe",
-    name: "Glass Carafe",
-    blurb: "Mouth-blown borosilicate, 1 litre.",
+    name: "Mouth-Blown Glass Carafe",
+    maker: "Vetro Alto, Murano",
+    blurb: "One litre of thin borosilicate glass with a tumbler that doubles as a lid.",
     price: 4200,
-    swatch: ["#cfe0e3", "#7fa3aa"],
+    backdrop: "#dde6e6",
   },
 ];
 
