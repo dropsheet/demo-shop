@@ -19,7 +19,8 @@ test("home page renders the storefront and the discounted products", async ({ pa
     const card = page.locator(`[data-product="${id}"]`);
     await card.scrollIntoViewIfNeeded();
     await expect(card.getByRole("heading", { name })).toBeVisible();
-    await expect(card.getByText(price, { exact: true })).toBeVisible();
+    // Substring, not exact: a struck-through original price may be added inside the same element
+    await expect(card.getByText(price).first()).toBeVisible();
   }
 
   // The cart counts up
