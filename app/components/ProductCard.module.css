@@ -14,6 +14,7 @@
 }
 
 .art {
+  position: relative;
   overflow: hidden;
 }
 
@@ -69,5 +70,31 @@
 .price {
   font-size: 1.05rem;
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.prices {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.original {
+  color: var(--muted);
+  font-size: 0.9rem;
   font-variant-numeric: tabular-nums;
 }
