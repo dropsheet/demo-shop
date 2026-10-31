@@ -9,8 +9,10 @@ export default defineConfig({
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : "list",
   use: { baseURL: process.env.BASE_URL ?? `http://localhost:${port}` },
   projects: [
-    { name: "light", use: { browserName: "chromium", colorScheme: "light" } },
-    { name: "dark", use: { browserName: "chromium", colorScheme: "dark" } },
+    { name: "light-desktop", use: { browserName: "chromium", colorScheme: "light", viewport: { width: 1440, height: 900 } } },
+    { name: "light-phone", use: { browserName: "chromium", colorScheme: "light", viewport: { width: 390, height: 844 } } },
+    { name: "dark-desktop", use: { browserName: "chromium", colorScheme: "dark", viewport: { width: 1440, height: 900 } } },
+    { name: "dark-phone", use: { browserName: "chromium", colorScheme: "dark", viewport: { width: 390, height: 844 } } },
   ],
   webServer: process.env.BASE_URL
     ? undefined
