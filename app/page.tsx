@@ -106,6 +106,9 @@ export default function Home() {
       <footer className={styles.footer}>
         <span>© Fernwood Supply</span>
         <span>A demo storefront. Nothing here is for sale.</span>
+        <span className={styles.footerNote}>
+          Free shipping on orders over the threshold. Prices include tax.
+        </span>
       </footer>
     </>
   );

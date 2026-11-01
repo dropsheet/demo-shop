@@ -293,6 +293,11 @@
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.footerNote {
+  flex-basis: 100%;
 }
 
 @media (max-width: 900px) {
