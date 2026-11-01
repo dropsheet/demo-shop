@@ -1,13 +1,14 @@
 import { CartButton } from "@/app/components/Cart";
 import { HeroArt } from "@/app/components/ProductArt";
 import { ProductCard } from "@/app/components/ProductCard";
-import { products } from "@/app/lib/products";
+import { formatPrice, products } from "@/app/lib/products";
+import { FREE_SHIPPING_THRESHOLD } from "@/app/lib/shipping";
 import Link from "next/link";
 import styles from "./page.module.css";
 
 const promises = [
   { title: "Made by small makers", body: "Every piece comes from a studio of fewer than ten people." },
-  { title: "Free shipping over $75", body: "Packed in recycled paper, delivered in 2–4 days." },
+  { title: `Free shipping over ${formatPrice(FREE_SHIPPING_THRESHOLD).replace(".00", "")}`, body: "Packed in recycled paper, delivered in 2–4 days." },
   { title: "Thirty-day returns", body: "Live with it for a month. If it isn't right, send it back." },
 ];
 
