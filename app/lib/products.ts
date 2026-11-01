@@ -9,9 +9,20 @@ export type Product = {
   compareAtPrice?: number;
   /** Background colour behind the product artwork. */
   backdrop: string;
+  /** Short label shown on the product card, e.g. "Back in stock". */
+  tag?: string;
 };
 
 export const products: Product[] = [
+  {
+    id: "brass-candle",
+    name: "Cast Brass Candlestick",
+    maker: "Foundry Row, Sheffield",
+    blurb: "Sand-cast solid brass that warms to a soft patina over the years.",
+    price: 3800,
+    backdrop: "#ece3cf",
+    tag: "Back in stock",
+  },
   {
     id: "linen-throw",
     name: "Stonewashed Linen Throw",
@@ -45,14 +56,6 @@ export const products: Product[] = [
     price: 14800,
     compareAtPrice: 18500,
     backdrop: "#d7ddd3",
-  },
-  {
-    id: "brass-candle",
-    name: "Cast Brass Candlestick",
-    maker: "Foundry Row, Sheffield",
-    blurb: "Sand-cast solid brass that warms to a soft patina over the years.",
-    price: 3800,
-    backdrop: "#ece3cf",
   },
   {
     id: "glass-carafe",

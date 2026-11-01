@@ -7,6 +7,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className={styles.card} data-testid="product-card" data-product={product.id}>
       <div className={styles.art}>
+        {product.tag && <span className={styles.tag}>{product.tag}</span>}
         <ProductArt id={product.id} backdrop={product.backdrop} label={product.name} />
       </div>
       <div className={styles.body}>
