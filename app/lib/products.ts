@@ -70,3 +70,11 @@ export function formatPrice(cents: number): string {
     currency: "USD",
   }).format(cents / 100);
 }
+
+/** Sale details for a product, or null when it has no valid discount (missing, equal, lower or non-finite compare-at price). */
+export function getSale(product: Product): { original: number; current: number } | null {
+  const { price, compareAtPrice } = product;
+  if (compareAtPrice === undefined || !Number.isFinite(compareAtPrice) || !Number.isFinite(price)) return null;
+  if (price <= 0 || compareAtPrice <= price) return null;
+  return { original: compareAtPrice, current: price };
+}
