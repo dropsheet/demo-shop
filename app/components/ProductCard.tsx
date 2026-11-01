@@ -14,8 +14,11 @@ export function ProductCard({ product }: { product: Product }) {
         <h3 className={styles.name}>{product.name}</h3>
         <p className={styles.blurb}>{product.blurb}</p>
         <div className={styles.footer}>
-          <span className={styles.price}>{formatPrice(product.price)}</span>
-          <AddToCart name={product.name} />
+          <span className={styles.price}>
+            {formatPrice(product.price)}
+            {product.compareAtPrice !== undefined && <s className={styles.was}>{formatPrice(product.compareAtPrice)}</s>}
+          </span>
+          <AddToCart product={product} />
         </div>
       </div>
     </article>
