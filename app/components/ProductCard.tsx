@@ -15,7 +15,7 @@ export function ProductCard({ product }: { product: Product }) {
         <p className={styles.blurb}>{product.blurb}</p>
         <div className={styles.footer}>
           <span className={styles.price}>{formatPrice(product.price)}</span>
-          <AddToCart name={product.name} />
+          <AddToCart id={product.id} />
         </div>
       </div>
     </article>
