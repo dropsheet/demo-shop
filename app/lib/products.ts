@@ -70,3 +70,12 @@ export function formatPrice(cents: number): string {
     currency: "USD",
   }).format(cents / 100);
 }
+
+/** Original price in cents when the product is validly discounted, otherwise null. Invalid data is ignored. */
+export function getOriginalPrice(product: Product): number | null {
+  const { price, compareAtPrice } = product;
+  if (compareAtPrice === undefined) return null;
+  if (!Number.isFinite(price) || !Number.isFinite(compareAtPrice)) return null;
+  if (price <= 0 || compareAtPrice <= price) return null;
+  return compareAtPrice;
+}
