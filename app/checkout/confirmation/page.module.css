@@ -1,0 +1,75 @@
+.main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.panel {
+  background: var(--surface);
+  border-radius: 20px;
+  box-shadow: 0 1px 0 var(--line);
+  padding: 32px;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.muted {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+.order {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.lines {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.totals {
+  margin: 0 0 24px;
+  display: grid;
+  gap: 8px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalRow dd {
+  margin: 0;
+}
+
+.grand {
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-weight: 600;
+}
+
+.home {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-decoration: none;
+  font-weight: 600;
+}
