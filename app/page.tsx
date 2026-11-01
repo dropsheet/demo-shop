@@ -14,7 +14,7 @@ const promises = [
 export default function Home() {
   return (
     <>
-      <div className={styles.announce}>Autumn sale: selected pieces up to 25% off, while they last.</div>
+      <div className={styles.announce}>Free shipping on every order over $75</div>
 
       <header className={styles.header}>
         <Link href="/" className={styles.brand} aria-label="Fernwood Supply home">
