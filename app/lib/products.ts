@@ -70,3 +70,13 @@ export function formatPrice(cents: number): string {
     currency: "USD",
   }).format(cents / 100);
 }
+
+/** True only when a product has a sale price that is a real discount (compareAtPrice above price). */
+export function isOnSale(product: Product): boolean {
+  return (
+    product.compareAtPrice !== undefined &&
+    Number.isInteger(product.compareAtPrice) &&
+    product.price > 0 &&
+    product.compareAtPrice > product.price
+  );
+}
