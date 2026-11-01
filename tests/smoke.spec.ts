@@ -5,7 +5,7 @@ test("home page renders the storefront and the discounted products", async ({ pa
   page.on("pageerror", (e) => errors.push(e.message));
   page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
 
-  await page.goto("/");
+  await page.goto("./");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   await expect(page.getByRole("heading", { level: 1 })).toContainText("slow");
   await expect(page.getByTestId("product-card")).toHaveCount(6);

@@ -24,6 +24,16 @@ jobs:
       - run: npm run test:e2e
         env:
           CI: "1"
+      # Branch previews are served under /demo-shop/<slug> (next.config.ts): build and smoke under a base path too
+      - name: build under a base path
+        run: npm run build
+        env:
+          NEXT_BASE_PATH: /demo-shop/ci-smoke
+      - name: smoke under a base path
+        run: npm run test:e2e -- --output=test-results/base-path
+        env:
+          CI: "1"
+          BASE_PATH: /demo-shop/ci-smoke
       - uses: actions/upload-artifact@v4
         if: always()
         with:

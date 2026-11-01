@@ -2,6 +2,7 @@ import { CartButton } from "@/app/components/Cart";
 import { HeroArt } from "@/app/components/ProductArt";
 import { ProductCard } from "@/app/components/ProductCard";
 import { products } from "@/app/lib/products";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 const promises = [
@@ -16,13 +17,13 @@ export default function Home() {
       <div className={styles.announce}>Autumn sale: selected pieces up to 25% off, while they last.</div>
 
       <header className={styles.header}>
-        <a href="/" className={styles.brand} aria-label="Fernwood Supply home">
+        <Link href="/" className={styles.brand} aria-label="Fernwood Supply home">
           <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
             <circle cx="16" cy="16" r="15" fill="var(--accent)" />
             <path d="M16 25V11m0 4 5-4m-5 8-5-4" stroke="var(--accent-ink)" strokeWidth="2.2" strokeLinecap="round" fill="none" />
           </svg>
           Fernwood Supply
-        </a>
+        </Link>
         <nav className={styles.nav} aria-label="Main">
           <a href="#shop">Shop</a>
           <a href="#makers">Makers</a>

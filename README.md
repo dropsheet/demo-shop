@@ -20,3 +20,10 @@ GitHub Actions (`.github/workflows/ci.yml`) builds and runs the smoke on every p
 
 There are no environment variables and no secrets. Every branch gets a Vercel
 preview deploy; `main` deploys to production.
+
+Previews are served through the Dropsheet preview router at
+`https://preview.dropsheet.ai/demo-shop/<slug>/`, where `<slug>` is the middle of
+the branch alias `demo-shop-git-<slug>-dropsheet.vercel.app`. A preview build
+therefore sets `basePath` to `/demo-shop/<slug>` (`next.config.ts`); production
+and local builds stay at the root. To try a base path locally:
+`NEXT_BASE_PATH=/demo-shop/x npm run build && BASE_PATH=/demo-shop/x npm run test:e2e`.

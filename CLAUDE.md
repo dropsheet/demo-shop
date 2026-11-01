@@ -11,3 +11,6 @@ Do this for each ticket in the work order, in order, one commit per ticket:
    If the typecheck was skipped or still reports errors, say so in the commit message body.
 
 When every ticket has its commit, stop.
+
+Branch previews are served under a base path (`/demo-shop/<branch>`), so internal links use `next/link`, images use
+`next/image` or an import, and no code hard-codes a root path such as `href="/"` or `src="/logo.png"`.
