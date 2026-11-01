@@ -70,3 +70,15 @@ export function formatPrice(cents: number): string {
     currency: "USD",
   }).format(cents / 100);
 }
+
+/** A product is on sale only when its original price is a whole number of cents above the current price. */
+export function isOnSale(product: Product): product is Product & { compareAtPrice: number } {
+  const { price, compareAtPrice } = product;
+  return (
+    typeof compareAtPrice === "number" &&
+    Number.isInteger(compareAtPrice) &&
+    Number.isInteger(price) &&
+    price >= 0 &&
+    compareAtPrice > price
+  );
+}
