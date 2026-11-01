@@ -64,6 +64,10 @@ export const products: Product[] = [
   },
 ];
 
+export function isOnSale(product: Product): boolean {
+  return product.compareAtPrice !== undefined && product.compareAtPrice > product.price;
+}
+
 export function formatPrice(cents: number): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
