@@ -113,7 +113,7 @@ export function CartButton() {
     <button
       type="button"
       className={styles.cart}
-      aria-label={`Open cart, ${count} ${count === 1 ? "item" : "items"}`}
+      aria-label={`${count} items in cart`}
       onClick={openCart}
     >
       <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
