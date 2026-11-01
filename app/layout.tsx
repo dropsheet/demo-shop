@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { CartProvider } from "@/app/components/Cart";
+import { CartDrawer } from "@/app/components/CartDrawer";
 import "./globals.css";
 
 const display = Fraunces({ subsets: ["latin"], variable: "--font-display", axes: ["opsz", "SOFT"] });
@@ -15,7 +16,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );
