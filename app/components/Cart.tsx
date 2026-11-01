@@ -24,6 +24,7 @@ type Cart = {
   setQuantity: (id: string, qty: number) => void;
   remove: (id: string) => void;
   clear: () => void;
+  ready: boolean;
   open: boolean;
   setOpen: (open: boolean) => void;
 };
@@ -36,6 +37,7 @@ const CartContext = createContext<Cart>({
   setQuantity: () => {},
   remove: () => {},
   clear: () => {},
+  ready: false,
   open: false,
   setOpen: () => {},
 });
@@ -128,8 +130,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const subtotal = items.reduce((n, l) => n + unitPrice(l) * l.quantity, 0);
 
   const value = useMemo(
-    () => ({ items, count, subtotal, add, setQuantity, remove, clear, open, setOpen }),
-    [items, count, subtotal, add, setQuantity, remove, clear, open],
+    () => ({ items, count, subtotal, add, setQuantity, remove, clear, ready: hydrated, open, setOpen }),
+    [items, count, subtotal, add, setQuantity, remove, clear, hydrated, open],
   );
 
   return (

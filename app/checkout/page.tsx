@@ -39,12 +39,14 @@ function validate(v: Values): Errors {
 
 export default function CheckoutPage() {
   const router = useRouter();
-  const { items, subtotal, clear } = useCart();
+  const { items, subtotal, clear, ready } = useCart();
   const [values, setValues] = useState<Values>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
 
   const shipping = shippingFor(subtotal);
   const total = subtotal + shipping;
+
+  if (!ready) return <main className={styles.main} />;
 
   if (items.length === 0) {
     return (
