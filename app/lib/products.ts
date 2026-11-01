@@ -64,6 +64,11 @@ export const products: Product[] = [
   },
 ];
 
+/** True only when a compare-at price exists and is above the current price. */
+export function isOnSale(product: Product): boolean {
+  return product.compareAtPrice !== undefined && product.compareAtPrice > product.price;
+}
+
 export function formatPrice(cents: number): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
