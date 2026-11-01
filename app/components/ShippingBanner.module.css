@@ -1,0 +1,9 @@
+.banner {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
