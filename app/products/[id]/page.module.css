@@ -1,0 +1,58 @@
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.back {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 24px;
+}
+
+.art {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.maker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.blurb {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.buy {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 16px;
+}

@@ -1,4 +1,5 @@
 import { type Product } from "@/app/lib/products";
+import Link from "next/link";
 import { AddToCart } from "./Cart";
 import { Price, SaleBadge } from "./Price";
 import { ProductArt } from "./ProductArt";
@@ -15,7 +16,11 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
       <div className={styles.body}>
         <p className={styles.maker}>{product.maker}</p>
-        <h3 className={styles.name}>{product.name}</h3>
+        <h3 className={styles.name}>
+          <Link href={`/products/${product.id}`} className={styles.link}>
+            {product.name}
+          </Link>
+        </h3>
         <p className={styles.blurb}>{product.blurb}</p>
         <div className={styles.footer}>
           <Price product={product} />
