@@ -70,3 +70,17 @@ export function formatPrice(cents: number): string {
     currency: "USD",
   }).format(cents / 100);
 }
+
+/** A product is on sale only when it has a valid compare-at price above its price. */
+export function isOnSale(
+  product: Pick<Product, "price" | "compareAtPrice">,
+): product is { price: number; compareAtPrice: number } {
+  const { price, compareAtPrice } = product;
+  return (
+    typeof compareAtPrice === "number" &&
+    Number.isFinite(compareAtPrice) &&
+    Number.isFinite(price) &&
+    price >= 0 &&
+    compareAtPrice > price
+  );
+}
