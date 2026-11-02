@@ -104,7 +104,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <span>© Fernwood Supply</span>
+        <span>© {new Date().getFullYear()} Fernwood Supply</span>
         <span>A demo storefront. Nothing here is for sale.</span>
       </footer>
     </>
