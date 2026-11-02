@@ -1,6 +1,7 @@
 import { CartButton } from "@/app/components/Cart";
 import { HeroArt } from "@/app/components/ProductArt";
 import { ProductCard } from "@/app/components/ProductCard";
+import { WishlistButton } from "@/app/components/WishlistButton";
 import { products } from "@/app/lib/products";
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -29,7 +30,10 @@ export default function Home() {
           <a href="#makers">Makers</a>
           <a href="#journal">Journal</a>
         </nav>
-        <CartButton />
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 20 }}>
+          <WishlistButton />
+          <CartButton />
+        </div>
       </header>
 
       <main>
